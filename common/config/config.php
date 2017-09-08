@@ -3,6 +3,7 @@
  * Created by PhpStorm.
  * Author: npbtrac@yahoo.com
  * Date time: 4/17/17 1:38 PM
+ * Desc: put all common for all environments, all ends here
  */
 
 return [
@@ -48,7 +49,7 @@ return [
             ]
         ],
 
-        // URL Manager for backend
+        // URL Manager for webservice
         'urlManagerApi' => [
             'class' => 'common\libs\ClsUrlManager',
             // we don't need pretty url here
@@ -78,7 +79,6 @@ return [
                     'basePath' => '@app/languages',
                     'fileMap' => [
                         'app' => 'app.php',
-                        'app/error' => 'error.php',
                     ],
                 ],
                 'enpii*' => [
