@@ -1,0 +1,47 @@
+<IfModule mod_rewrite.c>
+
+    # End the processing, if a rewrite already occurred
+    RewriteEngine On
+
+    RewriteBase /enpii/enpii-adv/
+
+    # the main rewrite rule for the frontend application
+    RewriteCond %{REQUEST_URI} !^/enpii/enpii-adv/(frontend/web|backend/web|api/web|admin|ws|uploads)
+    RewriteRule ^(.*) /enpii/enpii-adv/frontend/web/$1 [L]
+
+    # the main rewrite rule for the backend application
+    RewriteCond %{REQUEST_URI} ^/enpii/enpii-adv/ws
+    RewriteRule ^ws(.*) /enpii/enpii-adv/api/web/$1 [L]
+
+    # redirect to the page without a trailing slash (uncomment if necessary)
+    #RewriteCond %{REQUEST_URI} ^/demo/advanced/admin/$
+    #RewriteRule ^(admin)/ /demo/advanced/$1 [L,R=301]
+    # the main rewrite rule for the backend application
+    RewriteCond %{REQUEST_URI} ^/enpii/enpii-adv/admin
+    RewriteRule ^admin(.*) /enpii/enpii-adv/backend/web/$1 [L]
+
+    # if a directory or a file of the api application exists, use the request directly
+    RewriteCond %{REQUEST_URI} ^/enpii/enpii-adv/api/web
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # otherwise forward the request to index.php
+    RewriteRule . /enpii/enpii-adv/api/web/index.php [L]
+
+    # if a directory or a file of the frontend application exists, use the request directly
+    RewriteCond %{REQUEST_URI} ^/enpii/enpii-adv/frontend/web
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # otherwise forward the request to index.php
+    RewriteRule (.|uploads) /enpii/enpii-adv/frontend/web/index.php [L]
+
+    # if a directory or a file of the backend application exists, use the request directly
+    RewriteCond %{REQUEST_URI} ^/enpii/enpii-adv/backend/web
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # otherwise forward the request to index.php
+    RewriteRule . /enpii/enpii-adv/backend/web/index.php [L]
+
+    RewriteCond %{REQUEST_URI} \.(htaccess|htpasswd|svn|git)
+    RewriteRule \.(htaccess|htpasswd|svn|git) - [F]
+</IfModule>

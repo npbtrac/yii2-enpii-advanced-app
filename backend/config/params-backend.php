@@ -2,10 +2,11 @@
 /**
  * Created by PhpStorm.
  * Author: npbtrac@yahoo.com
- * Date time: 4/17/17 3:05 PM
+ * Date time: 9/8/17 5:22 PM
  */
 
-// Add params for backend in general here
-return [
-
-];
+// Contains params to pass to Yii::$app->params
+// Params here should only for backend
+return yii\helpers\ArrayHelper::merge(require('params-backend-env.php'), [
+	// Put params below this line
+]);

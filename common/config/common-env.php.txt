@@ -7,6 +7,7 @@
 
 return [
     'components' => [
+        // We should put db connection here since we have different database connections on different environments
         'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => 'mysql:host=127.0.0.1;dbname=db_name',

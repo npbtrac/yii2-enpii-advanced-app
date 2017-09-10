@@ -1,4 +1,21 @@
+# For this structure
+/.htaccess
+/environment.php
+/common/config/common-env.php
+/common/config/params-common-env.php
+/backend/config/backend-env.php
+/backend/config/params-backend-env.php
+/frontend/config/frontend-env.php
+/frontend/config/params-frontend-env.php
+/api/config/api-env.php
+/api/config/params-api-env.php
+/console/config/console-env.php
+/console/config/api-console-env.php
+
+
+# For Yii2 application
 /common/extensions
+/vendor
 
 # sass
 .sass-cache
