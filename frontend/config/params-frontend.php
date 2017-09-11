@@ -7,6 +7,7 @@
 
 // Contains params to pass to Yii::$app->params
 // Params here should only for backend
-return yii\helpers\ArrayHelper::merge(require('params-frontend-env.php'), [
+return yii\helpers\ArrayHelper::merge([
 	// Put params below this line
-]);
+
+], require('params-frontend-env.php'));

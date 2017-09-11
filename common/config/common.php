@@ -6,7 +6,7 @@
  */
 
 
-return yii\helpers\ArrayHelper::merge(require('common-env.php'), [
+return yii\helpers\ArrayHelper::merge([
 	// Put params below this line
 	'vendorPath' => VENDOR_PATH,
 	'language' => 'en',
@@ -130,4 +130,4 @@ return yii\helpers\ArrayHelper::merge(require('common-env.php'), [
 			],
 		],
 	],
-]);
+], require('common-env.php'));

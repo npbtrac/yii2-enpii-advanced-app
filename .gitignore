@@ -10,12 +10,16 @@
 /api/config/api-env.php
 /api/config/params-api-env.php
 /console/config/console-env.php
-/console/config/api-console-env.php
+/console/config/params-console-env.php
 
 
 # For Yii2 application
 /common/extensions
 /vendor
+
+# Other resources
+_htmls
+_resources
 
 # sass
 .sass-cache
