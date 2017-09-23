@@ -25,11 +25,11 @@ return yii\helpers\ArrayHelper::merge(
 		'components' => [
 
 			// Assign Frontend Url Manager to default Url Manager because this is Backend
-			'urlManager' => $arrConfigCommon['components']['urlManagerBackend'],
+			'urlManager' => $arrConfigCommon['components']['urlManagerFrontend'],
 
 			'view' => [
 				// Use a custom view class
-				'class'=> 'enpii\enpiiCms\libs\override\web\NpViewBackend',
+				'class'=> 'enpii\enpiiCms\libs\override\web\NpView',
 			],
 
 //			'user' => [

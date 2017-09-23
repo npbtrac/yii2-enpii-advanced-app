@@ -1,0 +1,1 @@
+- Always use ... as <same name as original class name>

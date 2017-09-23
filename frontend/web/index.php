@@ -6,6 +6,8 @@
  * Time: 10:48 AM
  */
 
+use \enpii\enpiiCms\libs\override\web\NpApplication as WebApplication;
+
 // Load environment params
 require(__DIR__ . '/../../environment.php');
 
@@ -21,7 +23,7 @@ require(__DIR__ . '/../config/bootstrap.php');
 $config = require(APP_BASE_PATH . '/frontend/config/frontend.php');
 
 // Create Applications
-$application = new \enpii\enpiiCms\libs\override\web\NpWebApplication($config);
+$application = new WebApplication($config);
 
 // Run web application
 $application->run();

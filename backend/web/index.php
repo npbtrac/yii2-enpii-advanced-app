@@ -14,14 +14,14 @@ require(VENDOR_PATH . '/autoload.php');
 require(VENDOR_PATH . '/yiisoft/yii2/Yii.php');
 
 // Load bootstrap settings
-require(__DIR__ . '/../../common/config/bootstrap.php');
-require(__DIR__ . '/../config/bootstrap.php');
+//require(__DIR__ . '/../../common/config/bootstrap.php');
+//require(__DIR__ . '/../config/bootstrap.php');
 
 // Load configurations
 $config = require(APP_BASE_PATH . '/backend/config/backend.php');
 
 // Create Applications
-$application = new \enpii\enpiiCms\libs\override\web\NpWebApplication($config);
+$application = new \enpii\enpiiCms\libs\override\web\NpApplication($config);
 
 // Run web application
 $application->run();

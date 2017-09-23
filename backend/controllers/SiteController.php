@@ -43,7 +43,7 @@ class SiteController extends NpController
 
 			// Show guides if no messages in queue
 			if (!Yii::$app->session->getAllFlashes()) {
-				Yii::$app->session->addFlash('info', Yii::t(_NP_TEXT_CATE, 'Enter the correct info to login.'));
+				Yii::$app->session->addFlash('info', Yii::t(NP_TEXT_CATE, 'Enter the correct info to login.'));
 			}
 
 			$this->layout = '@enpii/enpiiCms/views/layouts/backend/login';
@@ -65,7 +65,7 @@ class SiteController extends NpController
 	{
 		if (($exception = Yii::$app->getErrorHandler()->exception) === null) {
 			// action has been invoked not from error handler, but by direct route, so we display '404 Not Found'
-			$exception = new NpHttpException(404, Yii::t(_NP_TEXT_CATE, 'Page not found.'));
+			$exception = new NpHttpException(404, Yii::t(NP_TEXT_CATE, 'Page not found.'));
 		}
 
 		if ($exception instanceof yii\web\HttpException) {
@@ -74,9 +74,9 @@ class SiteController extends NpController
 			$code = $exception->getCode();
 		}
 		if ($exception instanceof yii\base\Exception) {
-			$name = Yii::t(_NP_TEXT_CATE, $exception->getName());
+			$name = Yii::t(NP_TEXT_CATE, $exception->getName());
 		} else {
-			$name = Yii::t(_NP_TEXT_CATE, 'Error');
+			$name = Yii::t(NP_TEXT_CATE, 'Error');
 		}
 		if ($code) {
 			$name .= " (#$code)";
@@ -85,7 +85,7 @@ class SiteController extends NpController
 		if ($exception instanceof yii\base\UserException) {
 			$message = $exception->getMessage();
 		} else {
-			$message = $this->defaultMessage ?: Yii::t(_NP_TEXT_CATE, 'An internal server error occurred.');
+			$message = $this->defaultMessage ?: Yii::t(NP_TEXT_CATE, 'An internal server error occurred.');
 		}
 
 		if (Yii::$app->getRequest()->getIsAjax()) {
