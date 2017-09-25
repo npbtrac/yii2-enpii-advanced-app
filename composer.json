@@ -37,6 +37,6 @@
     }
   },
   "scripts": {
-    "post-install-cmd": "php 'echo \"Done \n \";'"
+    "post-install-cmd": "php 'echo \"Done \n \"';"
   }
 }
